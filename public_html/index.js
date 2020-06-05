@@ -1,6 +1,6 @@
-import head from './components/head.js';
-import navbar from './components/navbar.js';
-import footer from './components/footer.js';
+import common from './common.js';
+
+const title = () => `<title>Badwater Bay</title>`;
 
 const mainContent = () => {
   return `
@@ -16,7 +16,6 @@ const mainContent = () => {
   `
 }
 
-document.getElementById('head-anchor').innerHTML += head();
-document.getElementById('navbar-anchor').innerHTML += navbar();
+common();
+document.getElementById('head-anchor').innerHTML += title();
 document.getElementById('content-anchor').innerHTML += mainContent();
-document.getElementById('footer-anchor').innerHTML += footer();
