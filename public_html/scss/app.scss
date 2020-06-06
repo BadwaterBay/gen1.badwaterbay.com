@@ -1,0 +1,49 @@
+// Run this command to let sass watch for changes and automatically output
+// sass --watch ./public_html/scss/app.scss:./public_html/css/app.min.css --style compressed
+
+header {
+  position: relative;
+  text-align: center;
+  color: white;
+
+  .reframe {
+    overflow: hidden;
+    height: 85vh;
+    width: 100%;
+  
+    img {
+      width: 100%;
+      height: auto;
+      z-index: 0;
+    }
+  
+    .overlay {
+      position: absolute;
+      width: 100%;
+      height: 85vh;
+      background-color: #080808;
+      opacity: .45;
+      z-index: 1;
+      left: 0;
+      top: 0;
+    }
+  }
+  
+  
+  .header-text {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  
+    p {
+      font-size: 1.6rem;
+  
+      a {
+        color: white;
+        text-decoration: underline;
+      }
+    }
+  }
+}
