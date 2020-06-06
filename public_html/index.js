@@ -2,15 +2,17 @@ import navbar from './components/navbar.js';
 
 const mainContent = () => {
   return `
-    <div class="container mt-4">
-      <p>You are at badwaterbay.com!</p>
-      <p>Visit us on <a href="https://github.com/BadwaterBay" target="_blank" rel="noreferrer">GitHub</a>.</p>
-      <ul class="list-group">
-        <li class="list-group-item list-group-item-action">
-          <a href="github-label-manager-plus/">GitHub Label Manager Plus</a>
-        </li>
-      </ul>
-    </div>
+    <header>
+      <div class="reframe">  
+        <img src="./images/badwater-basin.jpg" alt="Home page image">
+        <div class="overlay"></div>
+      </div>
+
+      <div class="header-text">
+        <h1>Welcome to Badwater&nbsp;Bay!</h1>
+        <p>Visit us on <a href="https://github.com/BadwaterBay" target="_blank" rel="noreferrer">GitHub</a>.</p>
+      </div>
+    </header>
   `
 }
 
