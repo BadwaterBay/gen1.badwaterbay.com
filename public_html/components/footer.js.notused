@@ -11,13 +11,6 @@ const footer = () => {
       integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9"
       crossorigin="anonymous"
     ></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106597051-5"></script>
-    <script async>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-106597051-5');
-    </script>
   `
 }
 

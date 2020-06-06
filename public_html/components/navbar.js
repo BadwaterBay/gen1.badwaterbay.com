@@ -11,7 +11,7 @@ const navbar = () => {
               Web&nbsp;Apps
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="github-label-manager-plus">
+              <a class="dropdown-item" href="/github-label-manager-plus/">
                 GitHub&nbsp;Label&nbsp;Manager&nbsp;Plus
               </a>
             </div>
@@ -19,7 +19,7 @@ const navbar = () => {
           <li class="nav-item">
             <a
               class="nav-link"
-              href="about/"
+              href="/about/"
             >
               About
             </a>
