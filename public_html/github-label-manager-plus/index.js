@@ -8,6 +8,7 @@ import app from './js/app.js';
 const mainContent = () => {
   return `
     <div id="content" class="container">
+      <h1>GitHub Label Manager Plus</h1>
       <div class="row">
         <div class="col-12 col-lg-4">
           ${loginCard()}

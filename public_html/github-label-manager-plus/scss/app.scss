@@ -1,5 +1,5 @@
 // Run this command to let sass watch for changes and automatically output
-// sass --watch ./src/scss/app.scss:./src/css/app.min.css --style compressed
+// sass --watch ./public_html/github-label-manager-plus/scss/app.scss:./public_html/github-label-manager-plus/css/app.min.css --style compressed
 
 %invalid-input {
   width: 100%;
@@ -10,6 +10,19 @@
 
 body {
   background-color: #fcfcfc;
+
+  h1 {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+
+    @media (max-width: 991px) {
+      text-align: center;
+    }
+
+    @media (max-width: 357px) {
+      font-size: 1.2rem;
+    }
+  }
 
   #content {
     margin-top: 1.5rem;
