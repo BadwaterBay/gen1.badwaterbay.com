@@ -1,6 +1,10 @@
 // Run this command to let sass watch for changes and automatically output
 // sass --watch ./public_html/scss/app.scss:./public_html/css/app.min.css --style compressed
 
+.navbar {
+  z-index: 50;
+}
+
 header {
   position: relative;
   text-align: center;
