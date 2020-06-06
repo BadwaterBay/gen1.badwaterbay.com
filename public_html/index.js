@@ -10,7 +10,7 @@ const mainContent = () => {
 
       <div class="header-text">
         <h1>Welcome to Badwater&nbsp;Bay!</h1>
-        <p>Visit us on <a href="https://github.com/BadwaterBay" target="_blank" rel="noreferrer">GitHub</a>.</p>
+        <p>Visit us on <a href="https://github.com/BadwaterBay" target="_blank" rel="noreferrer">GitHub</a></p>
       </div>
     </header>
   `
