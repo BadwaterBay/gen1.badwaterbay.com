@@ -1,20 +1,9 @@
-import common from '../common.js'
+import navbar from '../components/navbar.js';
 import loginCard from './components/loginCard.js';
 import copyFromCard from './components/copyFromCard.js';
 import managementCard from './components/managementCard.js';
 import loadingModal from './components/loadingModal.js';
 import app from './js/app.js';
-
-const styles = () => {
-  return `
-    <link href="css/colorpicker.css" rel="stylesheet" />
-    <link href="css/app.min.css" rel="stylesheet" />
-  `;
-};
-
-const title = () => `<title>GitHub Label Manager Plus | Badwater Bay</title>`;
-
-const scripts = () => `<script src="js/colorpicker.js"></script>`;
 
 const mainContent = () => {
   return `
@@ -33,12 +22,6 @@ const mainContent = () => {
   `;
 };
 
-const loadFirst = async () => {
-  common();
-  document.getElementById('head-anchor').innerHTML += styles();
-  document.getElementById('head-anchor').innerHTML += title();
-  document.getElementById('content-anchor').innerHTML += mainContent();
-  document.getElementById('footer-anchor').innerHTML += scripts();
-  return 1;
-};
-loadFirst().then(() => { app(); });
+document.getElementById('navbar-anchor').innerHTML += navbar();
+document.getElementById('content-anchor').innerHTML += mainContent();
+app();

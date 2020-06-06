@@ -1,6 +1,4 @@
-import common from './common.js';
-
-const title = () => `<title>Badwater Bay</title>`;
+import navbar from './components/navbar.js';
 
 const mainContent = () => {
   return `
@@ -16,6 +14,5 @@ const mainContent = () => {
   `
 }
 
-common();
-document.getElementById('head-anchor').innerHTML += title();
+document.getElementById('navbar-anchor').innerHTML += navbar();
 document.getElementById('content-anchor').innerHTML += mainContent();
