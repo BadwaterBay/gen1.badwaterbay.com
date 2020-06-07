@@ -1,0 +1,70 @@
+// Run this command from the home directory to let sass watch for changes and automatically output
+// sass --watch ./public_html/camera-trends/scss/app.scss:./public_html/camera-trends/css/app.min.css --style compressed
+
+$font-stack: Arial, Helvetica, sans-serif;
+
+/* AXES */
+/* ticks */
+
+h1 {
+  font-size: 2.1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+h3 {
+  font-size: 1.6rem;
+  margin-bottom: 0;
+}
+
+.axis {
+  line {
+    stroke: #706f6f;
+    stroke-width: 2;
+    shape-rendering: crispEdges;
+  }
+
+  /* axis contour */
+  path {
+    stroke: #706f6f;
+    stroke-width: 2;
+    shape-rendering: crispEdges;
+  }
+
+  /* axis text */
+  text {
+    fill: #303030;
+    font-family: $font-stack;
+    font-size: 1.1rem;
+  }
+
+}
+  
+/* LINE CHART */
+%chart-line {
+  fill: none;
+  stroke-width: 2;
+}
+
+path.line-0 {
+  @extend %chart-line;
+  stroke: #e41a1c;
+}
+  
+path.line-1 {
+  @extend %chart-line;
+  stroke: #377eb8;
+  /* stroke-dasharray: 3; */
+}
+  
+path.line-2 {
+  @extend %chart-line;
+  stroke: #4daf4a;
+  /* stroke-dasharray: 6; */
+}
+  
+.serie_label {
+  fill: #303030;
+  font-family: $font-stack;
+  font-size: 1rem;
+}

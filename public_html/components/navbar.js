@@ -14,6 +14,9 @@ const navbar = () => {
               <a class="dropdown-item" href="/github-label-manager-plus/">
                 GitHub&nbsp;Label&nbsp;Manager&nbsp;Plus
               </a>
+              <a class="dropdown-item" href="/camera-trends/">
+                Camera Brand Search Trends
+              </a>
             </div>
           </li>
           <li class="nav-item">
