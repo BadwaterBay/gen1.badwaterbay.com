@@ -11,10 +11,10 @@ const navbar = () => {
               Web&nbsp;Apps
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="/github-label-manager-plus/">
+              <a class="dropdown-item" href="/app/github-label-manager-plus/">
                 GitHub&nbsp;Label&nbsp;Manager&nbsp;Plus
               </a>
-              <a class="dropdown-item" href="/camera-trends/">
+              <a class="dropdown-item" href="/app/camera-trends/">
                 Camera Brand Search Trends
               </a>
             </div>
