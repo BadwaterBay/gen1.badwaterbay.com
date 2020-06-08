@@ -1,0 +1,27 @@
+* {
+
+  // Firefox
+  scrollbar-width: thin;
+  scrollbar-color: #9b9b9b #f1f1f1;
+
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #9b9b9b;
+    border-radius: 20px;
+    border: 2.6px solid #f1f1f1;
+
+    &:hover {
+      background-color: #868686;
+    }
+    &:active {
+      background-color: #696969;
+    }
+  }
+}
