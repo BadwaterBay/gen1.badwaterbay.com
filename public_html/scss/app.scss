@@ -9,41 +9,29 @@ header {
   position: relative;
   text-align: center;
   color: white;
-
-  .reframe {
-    overflow: hidden;
-    height: 85vh;
+  
+  img {
     width: 100%;
-  
-    img {
-      width: 100%;
-      height: auto;
-      z-index: 0;
-    }
-  
-    .overlay {
-      position: absolute;
-      width: 100%;
-      height: 85vh;
-      background-color: #080808;
-      opacity: .45;
-      z-index: 1;
-      left: 0;
-      top: 0;
-    }
+    height: 85vmin;
+    z-index: 0;
+    filter: brightness(0.55);
+    object-fit: cover;
+    object-position: 0 10%;
   }
-  
   
   .header-text {
     position: absolute;
     left: 50%;
     top: 40%;
     transform: translate(-50%, -50%);
+    font-size: 4.3vmin;
     z-index: 2;
+
+    h1 {
+      font-size: 1.7em;
+    }
   
     p {
-      font-size: 1.6rem;
-  
       a {
         color: white;
         text-decoration: underline;
