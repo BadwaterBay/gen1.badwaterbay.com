@@ -1,4 +1,4 @@
-import navbar from './components/navbar.js';
+import navbar from './common/components/navbar.js';
 
 const mainContent = () => {
   return `
