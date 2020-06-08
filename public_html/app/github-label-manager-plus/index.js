@@ -1,4 +1,4 @@
-import navbar from '../components/navbar.js';
+import navbar from '/components/navbar.js';
 import loginCard from './components/loginCard.js';
 import copyFromCard from './components/copyFromCard.js';
 import managementCard from './components/managementCard.js';
