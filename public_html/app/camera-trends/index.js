@@ -1,4 +1,5 @@
 import navbar from '/common/components/navbar.js';
+import footer from '/common/components/footer.js';
 import app from './js/app.js';
 
 const mainContent = () => {
@@ -49,4 +50,5 @@ const mainContent = () => {
 
 document.getElementById('navbar-anchor').innerHTML += navbar();
 document.getElementById('content-anchor').innerHTML += mainContent();
+document.getElementById('footer-anchor').innerHTML += footer();
 app();
