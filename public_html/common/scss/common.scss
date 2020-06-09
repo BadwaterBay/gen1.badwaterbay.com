@@ -29,13 +29,39 @@ body {
   }
   
   #footer {
-    background-color: rgb(202, 172, 172);
-    padding-top: 2rem;
+    background-color: #d6d6d6;
+    color: #585858;
+    padding-top: 1.5rem;
     padding-bottom: 1.5rem;
     margin-top: 3rem;
     width: 100%;
-    height: 200px;
     position: absolute;
-    bottom: -200px;
+    bottom: -220px;
+
+    ul.icons {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      padding-inline-start: 0;
+      margin-bottom: 0.5rem;
+
+      a {
+        color: #585858;
+        font-size: 2.8em;
+        padding-right: .4em;
+      }
+    }
+
+    #footer-email {
+
+      > a {
+        color: #585858;
+
+        .fa-envelope {
+          margin-right: 0.1rem;
+        }
+      }
+      
+    }
   }
 }
