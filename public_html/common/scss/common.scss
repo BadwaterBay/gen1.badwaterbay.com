@@ -1,0 +1,67 @@
+body {
+
+  position: relative;
+  min-height: 100vh;
+
+  // Scoll bar
+  scrollbar-width: thin;
+  scrollbar-color: #9b9b9b #f1f1f1;
+
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #9b9b9b;
+    border-radius: 20px;
+    border: 2.6px solid #f1f1f1;
+
+    &:hover {
+      background-color: #868686;
+    }
+    &:active {
+      background-color: #696969;
+    }
+  }
+  
+  #footer {
+    background-color: #d6d6d6;
+    color: #585858;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    margin-top: 3rem;
+    width: 100%;
+    position: absolute;
+    bottom: -220px;
+
+    ul.icons {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      padding-inline-start: 0;
+      margin-bottom: 0.5rem;
+
+      a {
+        color: #585858;
+        font-size: 2.8em;
+        padding-right: .4em;
+      }
+    }
+
+    #footer-email {
+
+      > a {
+        color: #585858;
+
+        .fa-envelope {
+          margin-right: 0.1rem;
+        }
+      }
+      
+    }
+  }
+}

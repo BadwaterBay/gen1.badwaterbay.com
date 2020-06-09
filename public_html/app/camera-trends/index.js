@@ -1,4 +1,5 @@
-import navbar from '/components/navbar.js';
+import navbar from '/common/components/navbar.js';
+import footer from '/common/components/footer.js';
 import app from './js/app.js';
 
 const mainContent = () => {
@@ -7,7 +8,7 @@ const mainContent = () => {
       <h1>Camera Brand Search Trends of Canon, Nikon and Sony</h1>
         <div class="row">
           <div class="col-12 mb-3 col-md-10">
-            <p><a href="https://github.com/tangaw" target="_blank">Aaron Tang</a> and I wrote <a href="https://skylerdong.com/coding/scrape-google-trends.php" target="_blank">a piece of code in Python to scrape Google trends data</a>. Here we present the data.</p>
+            <p>We wrote a piece of code in Python to scrape Google trends data. Here we present the data.</p>
             <p>We are interested in the search trends of 3 major camera brands (Canon, Nikon and Sony).</p>
             <!-- <p>We further subdivide cameras into 3 keywords: camera (in general), DSLR and mirrorless.<p> -->
             <p>Hence, we scraped the Google search trend data of 9 sets of keywords from January 2006 to March 2020 at a monthly resolution:</p>
@@ -49,4 +50,5 @@ const mainContent = () => {
 
 document.getElementById('navbar-anchor').innerHTML += navbar();
 document.getElementById('content-anchor').innerHTML += mainContent();
+document.getElementById('footer-anchor').innerHTML += footer();
 app();

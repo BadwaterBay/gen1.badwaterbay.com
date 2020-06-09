@@ -1,4 +1,5 @@
-import navbar from '/components/navbar.js';
+import navbar from '/common/components/navbar.js';
+import footer from '/common/components/footer.js';
 import loginCard from './components/loginCard.js';
 import copyFromCard from './components/copyFromCard.js';
 import managementCard from './components/managementCard.js';
@@ -25,4 +26,5 @@ const mainContent = () => {
 
 document.getElementById('navbar-anchor').innerHTML += navbar();
 document.getElementById('content-anchor').innerHTML += mainContent();
+document.getElementById('footer-anchor').innerHTML += footer();
 app();
