@@ -1,3 +1,6 @@
+const currentDate = new Date();
+const currentYear = currentDate.getFullYear();
+
 const footer = () => {
   return `
     <div id="footer">
@@ -36,7 +39,7 @@ const footer = () => {
         </div>
         <hr>
         <div id="copyright">
-          Copyright &copy; 2020 Badwater Bay.
+          Copyright &copy; ${currentYear} Badwater Bay.
         </div>
       </div>
     </div>
