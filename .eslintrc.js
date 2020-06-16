@@ -4,7 +4,7 @@ module.exports = {
     es2020: true,
     jquery: true,
   },
-  extends: ['airbnb-base', 'prettier'],
+  extends: ['google', 'prettier'],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
