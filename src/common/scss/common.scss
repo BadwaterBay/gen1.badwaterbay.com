@@ -1,5 +1,4 @@
 body {
-
   position: relative;
   min-height: 100vh;
 
@@ -12,7 +11,7 @@ body {
   }
 
   &::-webkit-scrollbar-track {
-    background: #f1f1f1; 
+    background: #f1f1f1;
   }
 
   &::-webkit-scrollbar-thumb {
@@ -27,7 +26,7 @@ body {
       background-color: #696969;
     }
   }
-  
+
   #footer {
     background-color: #d6d6d6;
     color: #585858;
@@ -48,12 +47,11 @@ body {
       a {
         color: #585858;
         font-size: 2.8em;
-        padding-right: .4em;
+        padding-right: 0.4em;
       }
     }
 
     #footer-email {
-
       > a {
         color: #585858;
 
@@ -61,7 +59,6 @@ body {
           margin-right: 0.1rem;
         }
       }
-      
     }
   }
 }

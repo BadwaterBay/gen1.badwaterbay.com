@@ -10,8 +10,8 @@ const mainContent = () => {
         <p>Visit us on <a href="https://github.com/BadwaterBay" target="_blank" rel="noreferrer">GitHub</a></p>
       </div>
     </header>
-  `
-}
+  `;
+};
 
 document.getElementById('navbar-anchor').innerHTML += navbar();
 document.getElementById('content-anchor').innerHTML += mainContent();

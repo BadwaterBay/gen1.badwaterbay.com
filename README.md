@@ -12,6 +12,4 @@ We are a group that codes open-source projects.
 
 ## Contribute to this project
 
-
 ---
-
