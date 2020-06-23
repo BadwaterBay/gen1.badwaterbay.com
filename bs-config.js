@@ -15,7 +15,7 @@ module.exports = {
   ui: {
     port: 5001,
   },
-  files: './public_html/**/*',
+  files: './src/**/*',
   watchEvents: ['change'],
   watch: true,
   ignore: [],
@@ -27,7 +27,7 @@ module.exports = {
   proxy: false,
   port: 5000,
   middleware: false,
-  serveStatic: ['./public_html'],
+  serveStatic: ['./src'],
   ghostMode: {
     clicks: true,
     scroll: true,

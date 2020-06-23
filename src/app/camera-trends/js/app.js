@@ -1,8 +1,8 @@
 const app = () => {
   $(function () {
     function plotGoogleTrend(placeholder, csvFile) {
-      //------------------------1. PREPARATION------------------------//
-      //-----------------------------SVG------------------------------//
+      // ------------------------1. PREPARATION------------------------//
+      // -----------------------------SVG------------------------------//
       const width = 600;
       const height = 400;
       const margin = 20;
@@ -30,11 +30,11 @@ const app = () => {
         .style('margin', margin)
         .classed('svg-content', true);
 
-      //-----------------------------DATA-----------------------------//
+      // -----------------------------DATA-----------------------------//
       const parseDate = d3.utcParse('%Y-%m-%d');
       const dataset = d3.csv(csvFile);
       dataset.then((data) => {
-        let slices = data.columns.slice(1).map((name) => {
+        const slices = data.columns.slice(1).map((name) => {
           return {
             name: name,
             values: data.map((d) => {
@@ -59,7 +59,7 @@ const app = () => {
         // // returns the array's length
         // console.log("Array length", (slices[0].values).length);
 
-        //----------------------------SCALES----------------------------//
+        // ----------------------------SCALES----------------------------//
         const xScale = d3.scaleTime().range([0, width]);
         const yScale = d3.scaleLinear().rangeRound([height, 0]);
 
@@ -74,14 +74,14 @@ const app = () => {
           d3.max(slices, (c) => {
             return d3.max(c.values, (d) => {
               // return d.val;
-              let intRound = 0.02;
+              const intRound = 0.02;
               return Math.ceil(d.val / intRound) * intRound;
               // Round to the nearest greater integer intRound
             });
           }),
         ]);
 
-        //-----------------------------AXES-----------------------------//
+        // -----------------------------AXES-----------------------------//
         const yaxis = d3
           .axisLeft()
           // .ticks((slices[0].values).length / 20)
@@ -93,7 +93,7 @@ const app = () => {
           .tickFormat(d3.timeFormat('%Y'))
           .scale(xScale);
 
-        //----------------------------LINES-----------------------------//
+        // ----------------------------LINES-----------------------------//
         const line = d3
           .line()
           .x((d) => {
@@ -108,8 +108,8 @@ const app = () => {
           return 'line-' + name++;
         };
 
-        //-------------------------2. DRAWING---------------------------//
-        //-----------------------------AXES-----------------------------//
+        // -------------------------2. DRAWING---------------------------//
+        // -----------------------------AXES-----------------------------//
         svg
           .append('g')
           .attr('class', 'axis')
@@ -128,7 +128,7 @@ const app = () => {
           .style('text-anchor', 'end')
           .text('Google search index');
 
-        //----------------------------LINES-----------------------------//
+        // ----------------------------LINES-----------------------------//
         const lines = svg.selectAll('lines').data(slices).enter().append('g');
 
         lines
@@ -158,15 +158,15 @@ const app = () => {
           })
           .attr('x', 2)
           .text((d) => {
-            let n = d.name.split('_')[1];
+            const n = d.name.split('_')[1];
             return n.charAt(0).toUpperCase() + n.slice(1);
           });
       }); // d3
     } // function plotGoogleTrend
 
     function plotRevenue(placeholder, csvFile) {
-      //------------------------1. PREPARATION------------------------//
-      //-----------------------------SVG------------------------------//
+      // ------------------------1. PREPARATION------------------------//
+      // -----------------------------SVG------------------------------//
       const width = 600;
       const height = 400;
       const margin = 20;
@@ -194,11 +194,11 @@ const app = () => {
         .style('margin', margin)
         .classed('svg-content', true);
 
-      //-----------------------------DATA-----------------------------//
+      // -----------------------------DATA-----------------------------//
       const parseDate = d3.utcParse('%Y');
       const dataset = d3.csv(csvFile);
       dataset.then((data) => {
-        let slices = data.columns.slice(1).map((name) => {
+        const slices = data.columns.slice(1).map((name) => {
           return {
             name: name,
             values: data.map((d) => {
@@ -223,7 +223,7 @@ const app = () => {
         // // returns the array's length
         // console.log("Array length", (slices[0].values).length);
 
-        //----------------------------SCALES----------------------------//
+        // ----------------------------SCALES----------------------------//
         const xScale = d3.scaleTime().range([0, width]);
         const yScale = d3.scaleLinear().rangeRound([height, 0]);
 
@@ -238,14 +238,14 @@ const app = () => {
           d3.max(slices, (c) => {
             return d3.max(c.values, (d) => {
               // return d.val;
-              let intRound = 100;
+              const intRound = 100;
               return Math.ceil(d.val / intRound) * intRound;
               // Round to the nearest greater integer intRound
             });
           }),
         ]);
 
-        //-----------------------------AXES-----------------------------//
+        // -----------------------------AXES-----------------------------//
         const yaxis = d3
           .axisLeft()
           // .ticks((slices[0].values).length / 20)
@@ -257,7 +257,7 @@ const app = () => {
           .tickFormat(d3.timeFormat('%Y'))
           .scale(xScale);
 
-        //----------------------------LINES-----------------------------//
+        // ----------------------------LINES-----------------------------//
         const line = d3
           .line()
           .x((d) => {
@@ -272,8 +272,8 @@ const app = () => {
           return 'line-' + name++;
         };
 
-        //-------------------------2. DRAWING---------------------------//
-        //-----------------------------AXES-----------------------------//
+        // -------------------------2. DRAWING---------------------------//
+        // -----------------------------AXES-----------------------------//
         svg
           .append('g')
           .attr('class', 'axis')
@@ -292,7 +292,7 @@ const app = () => {
           .style('text-anchor', 'end')
           .text('Annual revenue (thousand JPY)');
 
-        //----------------------------LINES-----------------------------//
+        // ----------------------------LINES-----------------------------//
         const lines = svg.selectAll('lines').data(slices).enter().append('g');
 
         lines
@@ -322,7 +322,7 @@ const app = () => {
           })
           .attr('x', 2)
           .text((d) => {
-            let n = d.name;
+            const n = d.name;
             return n.charAt(0).toUpperCase() + n.slice(1);
           });
       }); // d3

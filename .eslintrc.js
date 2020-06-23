@@ -4,7 +4,10 @@ module.exports = {
     es2020: true,
     jquery: true,
   },
-  extends: ['google', 'prettier'],
+  extends: [
+    'google',
+    'plugin:prettier/recommended',
+  ],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
@@ -15,6 +18,7 @@ module.exports = {
   },
   rules: {
     'prettier/prettier': 'error',
+    'new-cap': 1,
   },
-  plugins: ['prettier'],
+  plugins: ['prettier', 'html', 'jquery',],
 };
