@@ -1,0 +1,8 @@
+# The following files will be ignored by Prettier
+
+/node_modules
+/build
+
+*.min.*
+.*ignore
+colorpicker.js

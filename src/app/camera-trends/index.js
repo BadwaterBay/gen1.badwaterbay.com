@@ -45,7 +45,7 @@ const mainContent = () => {
           </div>
       </div><!--row-->
     </div><!--maincontent-->
-  `
+  `;
 };
 
 document.getElementById('navbar-anchor').innerHTML += navbar();

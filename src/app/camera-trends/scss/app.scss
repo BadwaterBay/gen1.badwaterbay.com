@@ -37,9 +37,8 @@ h3 {
     font-family: $font-stack;
     font-size: 1.1rem;
   }
-
 }
-  
+
 /* LINE CHART */
 %chart-line {
   fill: none;
@@ -50,19 +49,19 @@ path.line-0 {
   @extend %chart-line;
   stroke: #e41a1c;
 }
-  
+
 path.line-1 {
   @extend %chart-line;
   stroke: #377eb8;
   /* stroke-dasharray: 3; */
 }
-  
+
 path.line-2 {
   @extend %chart-line;
   stroke: #4daf4a;
   /* stroke-dasharray: 6; */
 }
-  
+
 .serie_label {
   fill: #303030;
   font-family: $font-stack;
