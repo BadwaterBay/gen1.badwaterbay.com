@@ -24,7 +24,7 @@
     "node": ">=0.10 <0.12"
   },
   "devDependencies": {
-    "browser-sync": "^2.26.7",
+    "browser-sync": "^2.26.10",
     "concurrently": "^5.2.0",
     "eslint": "^7.4.0",
     "eslint-config-google": "^0.14.0",
