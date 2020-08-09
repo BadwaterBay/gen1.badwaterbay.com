@@ -2,6 +2,11 @@
 ###############
 /node_modules
 /build
+/submodules
+
+# Local configs #
+######################
+/.vscode
 
 # Compiled source #
 ###################
@@ -30,6 +35,7 @@
 *.log
 *.sqlite
 .eslintcache
+/coverage
 
 # OS generated files #
 ######################
