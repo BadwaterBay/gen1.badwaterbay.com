@@ -49,8 +49,16 @@ const autoCheckRepoOwnerCheckbox = () => {
   );
 };
 
+const listenForLoginWithGithub = () => {
+  document.getElementById('login-with-github').addEventListener('click', () => {
+    console.log('Login with GitHub clicked.');
+    window.location = 'http://localhost:5036/labelcopier/oauth';
+  });
+};
+
 export {
   listenForRepoOwnerCheckbox,
   listenForRepoOwnerInput,
   autoCheckRepoOwnerCheckbox,
+  listenForLoginWithGithub,
 };

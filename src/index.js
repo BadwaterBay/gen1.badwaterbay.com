@@ -56,7 +56,6 @@ class Router {
 
     const route = { uri, callback };
     this.routes.push(route);
-    console.log(`Route ${route.uri} pushed`);
   }
 
   /**
@@ -67,9 +66,7 @@ class Router {
       console.log('Router initiated.');
 
       const regexUri = RegExp(`^${route.uri}$`);
-
       const currentPath = window.location.pathname;
-      console.log(`Current path is: ${currentPath}`);
 
       if (currentPath.match(regexUri)) {
         return route.callback.call(this, { path: currentPath });
@@ -90,8 +87,6 @@ class Router {
 // });
 
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('DOM loaded');
-
   document.getElementById('navbar-anchor').appendChild(navbar);
   document.getElementById('footer-anchor').appendChild(footer);
 
@@ -100,29 +95,36 @@ document.addEventListener('DOMContentLoaded', () => {
   const router = new Router();
 
   router.get('/', (request) => {
-    console.log(`Route ${request.path} activated.`);
     contentAnchor.textContent = '';
     document.getElementById('content-anchor').appendChild(home);
   });
 
   router.get('/about', (request) => {
-    console.log(`Route ${request.path} activated.`);
     contentAnchor.textContent = '';
     document.getElementById('content-anchor').appendChild(about);
   });
 
   router.get('/labelcopier', (request) => {
-    console.log(`Route ${request.path} activated.`);
     contentAnchor.textContent = '';
     document.getElementById('content-anchor').appendChild(labelcopierContent);
-    labelcopierApp();
-  });
 
-  router.get('/app/labelcopier', (request) => {
-    console.log(`Route ${request.path} activated.`);
-    console.log(labelcopierContent);
-    contentAnchor.textContent = '';
-    document.getElementById('content-anchor').appendChild(labelcopierContent);
+    const urlParams = new URLSearchParams(window.location.search);
+    window.accessToken = null;
+
+    if (urlParams.has('auth-success')) {
+      if (urlParams.get('token') === 'false') {
+        const msg = 'Something went wrong with authentication.';
+        console.error(msg);
+        alert(msg);
+      } else if (urlParams.has('token')) {
+        window.accessToken = urlParams.get('token');
+        document.querySelectorAll('div.login-first-notice').forEach((e) => {
+          e.classList.add('hidden');
+        });
+      }
+      window.history.replaceState({}, document.title, '/' + 'labelcopier');
+    }
+
     labelcopierApp();
   });
 
