@@ -53,9 +53,10 @@ const listenForLoginWithGithub = () => {
   document.getElementById('login-with-github').addEventListener('click', () => {
     console.log('Login with GitHub clicked.');
     const hostName = window.location.hostname;
-    window.location = hostName.includes(localhost)
-      ? 'http://localhost:5036/labelcopier/oauth'
-      : 'https://api.badwaterbay.com/labelcopier/oauth';
+    window.location =
+      hostName === 'api.badwaterbay.com'
+        ? 'https://api.badwaterbay.com/labelcopier/oauth'
+        : 'http://localhost:5036/labelcopier/oauth';
   });
 };
 
