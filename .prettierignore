@@ -2,7 +2,11 @@
 
 /node_modules
 /build
+/dist
+/dist-client
+/dist-server
+/.vscode
+/coverage
+**/submodules
 
 *.min.*
-.*ignore
-colorpicker.js
