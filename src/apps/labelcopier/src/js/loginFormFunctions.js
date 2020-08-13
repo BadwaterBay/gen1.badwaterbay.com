@@ -52,7 +52,10 @@ const autoCheckRepoOwnerCheckbox = () => {
 const listenForLoginWithGithub = () => {
   document.getElementById('login-with-github').addEventListener('click', () => {
     console.log('Login with GitHub clicked.');
-    window.location = 'http://localhost:5036/labelcopier/oauth';
+    const hostName = window.location.hostname;
+    window.location = hostName.includes(localhost)
+      ? 'http://localhost:5036/labelcopier/oauth'
+      : 'https://api.badwaterbay.com/labelcopier/oauth';
   });
 };
 
