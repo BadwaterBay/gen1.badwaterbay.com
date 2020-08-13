@@ -112,15 +112,17 @@ document.addEventListener('DOMContentLoaded', () => {
     window.accessToken = null;
 
     if (urlParams.has('auth-success')) {
-      if (urlParams.get('auth-success') === 'false') {
-        const msg = 'Something went wrong with authentication.';
-        console.error(msg);
-        alert(msg);
-      } else if (urlParams.has('token')) {
-        window.accessToken = urlParams.get('token');
-        document.querySelectorAll('div.login-first-notice').forEach((e) => {
-          e.classList.add('hidden');
-        });
+      if (urlParams.get('auth-success') === 'true') {
+        if (urlParams.has('token')) {
+          window.accessToken = urlParams.get('token');
+          document.querySelectorAll('div.login-first-notice').forEach((e) => {
+            e.classList.add('hidden');
+          });
+        } else {
+          const msg = 'Something went wrong with authentication.';
+          console.error(msg);
+          alert(msg);
+        }
       }
       window.history.replaceState({}, document.title, '/' + 'labelcopier');
     }
