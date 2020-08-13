@@ -4,7 +4,7 @@
   "description": "Website for Badwater Bay",
   "author": "Badwater Bay",
   "license": "GPL-3.0-or-later",
-  "main": "index.html",
+  "main": "dist-client/index.html",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BadwaterBay/gen1.badwaterbay.com.git"
