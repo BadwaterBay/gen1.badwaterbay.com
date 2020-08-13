@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.accessToken = null;
 
     if (urlParams.has('auth-success')) {
-      if (urlParams.get('token') === 'false') {
+      if (urlParams.get('auth-success') === 'false') {
         const msg = 'Something went wrong with authentication.';
         console.error(msg);
         alert(msg);
