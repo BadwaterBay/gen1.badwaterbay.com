@@ -13,10 +13,8 @@ import navbar from './components/navbar.js';
 import footer from './components/footer.js';
 import home from './components/home';
 import about from './components/about';
-import labelcopierContent from './app/labelcopier/src/index';
-import labelcopierApp from './app/labelcopier/src/app';
-
-import app from './app';
+import labelcopierContent from './apps/labelcopier/src/index';
+import labelcopierApp from './apps/labelcopier/src/app';
 
 library.add(faGithub, faTwitter, faEnvelope);
 dom.watch();
@@ -129,6 +127,4 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   router.init();
-
-  app();
 });

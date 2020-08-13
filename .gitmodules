@@ -1,4 +1,0 @@
-
-[submodule "src/app/labelcopier"]
-	path = src/app/labelcopier
-	url = git@github.com:BadwaterBay/labelcopier.git
