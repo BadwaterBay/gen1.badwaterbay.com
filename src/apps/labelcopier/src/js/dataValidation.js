@@ -29,10 +29,6 @@ const trimmedValFromId = (id) => document.getElementById(id).value.trim();
 const getAndValidateLoginInfo = (mode = 'list') => {
   // The global accessToken variable is problematic. It should be addressed in the future.
 
-  console.log(
-    `Inside getAndValidateLoginInfo, access token is: ${window.accessToken}`
-  );
-
   const loginInfo = {
     homeRepoOwner: trimmedValFromId('home-repo-owner'),
     homeRepoName: trimmedValFromId('home-repo-name'),

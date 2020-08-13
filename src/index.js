@@ -63,8 +63,6 @@ class Router {
    */
   init() {
     this.routes.some((route) => {
-      console.log('Router initiated.');
-
       const regexUri = RegExp(`^${route.uri}$`);
       const currentPath = window.location.pathname;
 

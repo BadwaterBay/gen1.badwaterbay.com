@@ -88,8 +88,6 @@ const app = () => {
      * and reload entries
      */
     resetModalWhenClosed();
-
-    console.log('labelcopierApp activated.');
   } catch (err) {
     console.error('Unexpected error occurred in Labelcopier.');
     console.error(err);

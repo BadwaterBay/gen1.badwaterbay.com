@@ -51,7 +51,6 @@ const autoCheckRepoOwnerCheckbox = () => {
 
 const listenForLoginWithGithub = () => {
   document.getElementById('login-with-github').addEventListener('click', () => {
-    console.log('Login with GitHub clicked.');
     const hostName = window.location.hostname;
     window.location =
       hostName === 'badwaterbay.com'
