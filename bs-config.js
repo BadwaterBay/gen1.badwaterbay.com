@@ -13,7 +13,7 @@
  */
 module.exports = {
   ui: {
-    port: 5001,
+    port: 6001,
   },
   files: './src/**/*',
   watchEvents: ['change'],

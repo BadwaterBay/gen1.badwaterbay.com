@@ -30,6 +30,9 @@ module.exports = {
       },
     ],
   },
+  node: {
+    fs: 'empty',
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html',
@@ -44,5 +47,7 @@ module.exports = {
     contentBase: path.join(__dirname, 'build'),
     compress: true,
     port: 5000,
+    publicPath: '/',
+    historyApiFallback: true,
   },
 };

@@ -17,14 +17,9 @@ const app = () => {
         .attr('preserveAspectRatio', 'xMinYMin meet')
         .attr(
           'viewBox',
-          '-' +
-            adjWidth +
-            ' -' +
-            adjHeight +
-            ' ' +
-            (width + adjWidth * 3) +
-            ' ' +
-            (height + adjHeight * 3)
+          `-${adjWidth} -${adjHeight} ${width + adjWidth * 3} ${
+            height + adjHeight * 3
+          }`
         )
         .style('padding', padding)
         .style('margin', margin)
@@ -36,7 +31,7 @@ const app = () => {
       dataset.then((data) => {
         const slices = data.columns.slice(1).map((name) => {
           return {
-            name: name,
+            name,
             values: data.map((d) => {
               return {
                 date: parseDate(d.date),
@@ -105,7 +100,7 @@ const app = () => {
 
         let name = 0;
         const names = () => {
-          return 'line-' + name++;
+          return `line-${name++}`;
         };
 
         // -------------------------2. DRAWING---------------------------//
@@ -113,7 +108,7 @@ const app = () => {
         svg
           .append('g')
           .attr('class', 'axis')
-          .attr('transform', 'translate(0,' + height + ')')
+          .attr('transform', `translate(0,${height})`)
           .call(xaxis);
 
         svg
@@ -148,13 +143,9 @@ const app = () => {
             };
           })
           .attr('transform', (d) => {
-            return (
-              'translate(' +
-              (xScale(d.value.date) + 10) +
-              ',' +
-              (yScale(d.value.val) + 5) +
-              ')'
-            );
+            return `translate(${xScale(d.value.date) + 10},${
+              yScale(d.value.val) + 5
+            })`;
           })
           .attr('x', 2)
           .text((d) => {
@@ -181,14 +172,9 @@ const app = () => {
         .attr('preserveAspectRatio', 'xMinYMin meet')
         .attr(
           'viewBox',
-          '-' +
-            adjWidth +
-            ' -' +
-            adjHeight +
-            ' ' +
-            (width + adjWidth * 3) +
-            ' ' +
-            (height + adjHeight * 3)
+          `-${adjWidth} -${adjHeight} ${width + adjWidth * 3} ${
+            height + adjHeight * 3
+          }`
         )
         .style('padding', padding)
         .style('margin', margin)
@@ -200,7 +186,7 @@ const app = () => {
       dataset.then((data) => {
         const slices = data.columns.slice(1).map((name) => {
           return {
-            name: name,
+            name,
             values: data.map((d) => {
               return {
                 date: parseDate(d.date),
@@ -269,7 +255,7 @@ const app = () => {
 
         let name = 0;
         const names = () => {
-          return 'line-' + name++;
+          return `line-${name++}`;
         };
 
         // -------------------------2. DRAWING---------------------------//
@@ -277,7 +263,7 @@ const app = () => {
         svg
           .append('g')
           .attr('class', 'axis')
-          .attr('transform', 'translate(0,' + height + ')')
+          .attr('transform', `translate(0,${height})`)
           .call(xaxis);
 
         svg
@@ -312,13 +298,9 @@ const app = () => {
             };
           })
           .attr('transform', (d) => {
-            return (
-              'translate(' +
-              (xScale(d.value.date) + 10) +
-              ',' +
-              (yScale(d.value.val) + 5) +
-              ')'
-            );
+            return `translate(${xScale(d.value.date) + 10},${
+              yScale(d.value.val) + 5
+            })`;
           })
           .attr('x', 2)
           .text((d) => {

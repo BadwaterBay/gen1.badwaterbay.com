@@ -4,6 +4,7 @@
 /build
 /.vscode
 /coverage
+**/submodules
 
 colorpicker.js
 *.min.*

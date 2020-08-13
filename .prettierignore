@@ -4,6 +4,6 @@
 /build
 /.vscode
 /coverage
+**/submodules
 
 *.min.*
-.*ignore
