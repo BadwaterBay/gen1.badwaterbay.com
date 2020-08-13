@@ -4,9 +4,9 @@
 
 import 'bootstrap-material-design/dist/css/bootstrap-material-design.min.css';
 import './scss/index.scss';
-import './scss/app.scss';
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
 import { faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import 'bootstrap-material-design';
 
 import navbar from './components/navbar.js';
@@ -18,7 +18,7 @@ import labelcopierApp from './app/labelcopier/src/app';
 
 import app from './app';
 
-library.add(faGithub, faTwitter);
+library.add(faGithub, faTwitter, faEnvelope);
 dom.watch();
 
 /**

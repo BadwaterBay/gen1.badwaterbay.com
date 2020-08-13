@@ -1,3 +1,7 @@
+/**
+ * Camera trends
+ */
+
 const app = () => {
   $(function () {
     function plotGoogleTrend(placeholder, csvFile) {

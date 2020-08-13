@@ -37,7 +37,7 @@ footer.innerHTML = (() =>
       target="_blank"
       rel="noreferrer"
       >
-        <i class="fas fa-envelope"></i>
+        <svg class="fas fa-envelope"></svg>
         <span>info@badwaterbay.com</span>
       </a>
     </div>

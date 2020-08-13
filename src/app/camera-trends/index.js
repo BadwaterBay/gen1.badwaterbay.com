@@ -1,9 +1,6 @@
-import navbar from '/common/components/navbar.js';
-import footer from '/common/components/footer.js';
-import app from './js/app.js';
+// import app from './js/app.js';
 
-const mainContent = () => {
-  return `
+const cameraTrendsContent = (() => `
     <div class="container mainContent">
       <h1>Camera Brand Search Trends of Canon, Nikon and Sony</h1>
         <div class="row">
@@ -45,10 +42,11 @@ const mainContent = () => {
           </div>
       </div><!--row-->
     </div><!--maincontent-->
-  `;
-};
+  `)();
 
-document.getElementById('navbar-anchor').innerHTML += navbar();
-document.getElementById('content-anchor').innerHTML += mainContent();
-document.getElementById('footer-anchor').innerHTML += footer();
-app();
+// document.getElementById('navbar-anchor').innerHTML += navbar();
+// document.getElementById('content-anchor').innerHTML += mainContent();
+// document.getElementById('footer-anchor').innerHTML += footer();
+// app();
+
+export default cameraTrendsContent;

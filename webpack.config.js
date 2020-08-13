@@ -7,7 +7,7 @@ module.exports = {
   output: {
     filename: 'main.bundle.js',
     chunkFilename: '[path][name].bundle.js',
-    path: path.resolve(__dirname, 'build'),
+    path: path.resolve(__dirname, 'dist-client'),
   },
   module: {
     rules: [
@@ -23,7 +23,7 @@ module.exports = {
             // options: {
             // name: '[path][name].[ext]',
             // context: path.resolve(__dirname, "src"),
-            // useRelativePaths: true
+            // useRelativePaths: false
             // }
           },
         ],
@@ -44,7 +44,7 @@ module.exports = {
     }),
   ],
   devServer: {
-    contentBase: path.join(__dirname, 'build'),
+    contentBase: path.join(__dirname, 'dist-client'),
     compress: true,
     port: 5000,
     publicPath: '/',

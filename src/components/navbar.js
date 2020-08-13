@@ -7,18 +7,13 @@ navbar.innerHTML = (() =>
       Badwater&nbsp;Bay
     </a>
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Web&nbsp;Apps
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          href="labelcopier"
+        >
+          Labelcopier
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="/labelcopier">
-            Labelcopier
-          </a>
-          <a class="dropdown-item" href="/camera-trends">
-            Camera Brand Search Trends
-          </a>
-        </div>
       </li>
       <li class="nav-item">
         <a
