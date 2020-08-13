@@ -54,7 +54,7 @@ const listenForLoginWithGithub = () => {
     console.log('Login with GitHub clicked.');
     const hostName = window.location.hostname;
     window.location =
-      hostName === 'api.badwaterbay.com'
+      hostName === 'badwaterbay.com'
         ? 'https://api.badwaterbay.com/labelcopier/oauth'
         : 'http://localhost:5036/labelcopier/oauth';
   });
