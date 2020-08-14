@@ -56,7 +56,9 @@ const listenForLoginWithGithub = () => {
       window.accessToken === null
     ) {
       window.location =
-        'http://localhost:5036/apps/labelcopier/oauth/authorize';
+        window.location.hostname === 'badwaterbay.com'
+          ? 'http://api.badwaterbay.com/apps/labelcopier/oauth/authorize'
+          : 'http://localhost:5036/apps/labelcopier/oauth/authorize';
       return;
     }
   });
