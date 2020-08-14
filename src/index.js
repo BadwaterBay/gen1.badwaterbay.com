@@ -16,6 +16,13 @@ import about from './components/about';
 import labelcopierContent from './apps/labelcopier/src/index';
 import labelcopierApp from './apps/labelcopier/src/app';
 
+import {
+  urlForGetUser,
+  apiCallGetUser,
+  urlForCheckAppInstalled,
+  apiCallCheckAppInstalled,
+} from './apps/labelcopier/src/js/apiCalls';
+
 library.add(faGithub, faTwitter, faEnvelope);
 dom.watch();
 
@@ -97,37 +104,62 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const router = new Router();
 
-  router.get('/', (request) => {
+  router.get('/', (req) => {
     contentAnchor.textContent = '';
     document.getElementById('content-anchor').appendChild(home);
   });
 
-  router.get('/about', (request) => {
+  router.get('/about', (req) => {
     contentAnchor.textContent = '';
     document.getElementById('content-anchor').appendChild(about);
   });
 
-  router.get('/labelcopier', (request) => {
+  router.get('/apps/labelcopier', async (req) => {
     contentAnchor.textContent = '';
     document.getElementById('content-anchor').appendChild(labelcopierContent);
 
     const urlParams = new URLSearchParams(window.location.search);
+
     window.accessToken = null;
 
-    if (urlParams.has('auth-success')) {
-      if (urlParams.get('auth-success') === 'true') {
-        if (urlParams.has('token')) {
-          window.accessToken = urlParams.get('token');
-          document.querySelectorAll('div.login-first-notice').forEach((e) => {
+    if (urlParams.has('token')) {
+      window.accessToken = urlParams.get('token');
+      window.history.replaceState({}, document.title, '/' + 'labelcopier');
+
+      if (window.accessToken === 'null') {
+        const msg =
+          'Something went wrong with authentication. Please try to login again.';
+        console.error(msg);
+        alert(msg);
+      } else {
+        document.querySelectorAll('div.login-first-notice').forEach((e) => {
+          e.classList.add('hidden');
+        });
+      }
+
+      // Check if the corresponding app is installed
+      const appInstalled = await apiCallCheckAppInstalled(
+        urlForCheckAppInstalled
+      );
+
+      if (!appInstalled) {
+        window.location =
+          window.location.hostname === 'badwaterbay.com'
+            ? 'https://api.badwaterbay.com/apps/labelcopier/install/new'
+            : 'http://localhost:5036/apps/labelcopier/install/new';
+        return;
+      }
+
+      // Display avatar
+      apiCallGetUser(urlForGetUser)
+        .then((body) => body.avatar_url)
+        .then((avatarUrl) => {
+          document.getElementById('avatar').setAttribute('src', avatarUrl);
+          document.querySelectorAll('.login-button').forEach((e) => {
             e.classList.add('hidden');
           });
-        } else {
-          const msg = 'Something went wrong with authentication.';
-          console.error(msg);
-          alert(msg);
-        }
-      }
-      window.history.replaceState({}, document.title, '/' + 'labelcopier');
+        });
+      // There should be a catch here.
     }
 
     labelcopierApp();

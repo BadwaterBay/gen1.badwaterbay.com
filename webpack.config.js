@@ -30,6 +30,9 @@ module.exports = {
       },
     ],
   },
+  watchOptions: {
+    ignored: ['node_modules/**', '.github/**'],
+  },
   node: {
     fs: 'empty',
   },
@@ -43,11 +46,4 @@ module.exports = {
       Popper: ['popper.js', 'default'],
     }),
   ],
-  devServer: {
-    contentBase: path.join(__dirname, 'dist-client'),
-    compress: true,
-    port: 5000,
-    publicPath: '/',
-    historyApiFallback: true,
-  },
 };
