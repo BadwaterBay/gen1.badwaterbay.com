@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('content-anchor').appendChild(about);
   });
 
-  router.get('labelcopier', async (req) => {
+  router.get('/labelcopier', async (req) => {
     contentAnchor.textContent = '';
     document.getElementById('content-anchor').appendChild(labelcopierContent);
 
