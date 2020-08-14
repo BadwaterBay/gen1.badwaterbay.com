@@ -10,7 +10,7 @@ navbar.innerHTML = (() =>
       <li class="nav-item">
         <a
           class="nav-link"
-          href="apps/labelcopier"
+          href="labelcopier"
         >
           Labelcopier
         </a>
