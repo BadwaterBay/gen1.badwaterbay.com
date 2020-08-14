@@ -62,8 +62,13 @@ class Router {
    * Initialize router
    */
   init() {
+    // Remove trailing slashes
+    const originalUri = window.location.href;
+    const newUri = originalUri.replace(/\/+$/, '');
+    window.history.replaceState({}, newUri);
+
     this.routes.some((route) => {
-      const regexUri = RegExp(`^${route.uri}$`);
+      const regexUri = RegExp(`^${route.uri}\/?$`);
       const currentPath = window.location.pathname;
 
       if (currentPath.match(regexUri)) {
