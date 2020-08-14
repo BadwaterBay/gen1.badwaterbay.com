@@ -49,8 +49,5 @@ module.exports = {
     port: 5000,
     publicPath: '/',
     historyApiFallback: true,
-    historyApiFallback: {
-      index: 'index.html',
-    },
   },
 };
