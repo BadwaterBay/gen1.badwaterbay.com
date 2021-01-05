@@ -8,5 +8,6 @@
 /.vscode
 /coverage
 **/submodules
+src/apps/labelcopier
 
 *.min.*
