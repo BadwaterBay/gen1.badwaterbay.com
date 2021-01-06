@@ -14,8 +14,9 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
+    'new-cap': 'warn',
     'prettier/prettier': 'error',
-    'new-cap': 1,
+    'require-jsdoc': 'off',
   },
   plugins: ['prettier', 'html', 'jquery'],
 };

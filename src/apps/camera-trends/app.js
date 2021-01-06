@@ -314,7 +314,7 @@ const app = () => {
       }); // d3
     }
 
-    const dataGoogleTrend = [
+    [
       ['#plot-camera', 'data/camera-wtdmean-global.csv'],
       ['#plot-dslr', 'data/dslr-wtdmean-global.csv'],
       ['#plot-mirrorless', 'data/mirrorless-wtdmean-global.csv'],
@@ -322,7 +322,7 @@ const app = () => {
       plotGoogleTrend(r[0], r[1]);
     });
 
-    const dataRevenue = [['#plot-revenue', 'data/revenue.csv']].forEach((r) => {
+    [['#plot-revenue', 'data/revenue.csv']].forEach((r) => {
       plotRevenue(r[0], r[1]);
     });
   });

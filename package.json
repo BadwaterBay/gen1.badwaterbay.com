@@ -16,7 +16,7 @@
   "scripts": {
     "clean": "rm -rf dist-client",
     "format": "prettier './**/*.{js,html,md,json,css,scss}' --write",
-    "lint": "eslint './**/*.{js}' --cache --fix",
+    "lint": "eslint './**/*.js' --cache --fix",
     "build:dev": "webpack --watch --mode=development",
     "build": "yarn clean && webpack --mode=production",
     "serve:dev": "browser-sync start -s dist-client -c bs-config.js --single",
@@ -33,7 +33,7 @@
     "./**/*.{js,html,md,json,css,scss}": [
       "prettier --write"
     ],
-    "./**/*.{js}": [
+    "./**/*.js": [
       "eslint --cache --fix"
     ]
   },

@@ -2,6 +2,8 @@
  * Entry point of all JavaScript
  */
 
+'use strict';
+
 import 'bootstrap-material-design/dist/css/bootstrap-material-design.min.css';
 import './scss/index.scss';
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
@@ -17,9 +19,9 @@ import labelcopierContent from './apps/labelcopier/src/index';
 import labelcopierApp from './apps/labelcopier/src/app';
 
 import {
-  urlForGetUser,
-  apiCallGetUser,
-  urlForCheckAppInstalled,
+  composeUrlForMakingApiCallToGetUserInfo,
+  makeApiCallToGetUserInfo,
+  composeUrlForCheckingIfGithubAppIsInstalled,
   apiCallCheckAppInstalled,
 } from './apps/labelcopier/src/js/apiCalls';
 
@@ -30,18 +32,10 @@ dom.watch();
  * Client-side router
  */
 class Router {
-  /**
-   * Constructor
-   */
   constructor() {
     this.routes = [];
   }
 
-  /**
-   * Get route
-   * @param {*} uri
-   * @param {*} callback
-   */
   get(uri, callback) {
     if (!uri || !callback) {
       throw new Error("Either 'uri' or a callback function must be given.");
@@ -65,9 +59,6 @@ class Router {
     this.routes.push(route);
   }
 
-  /**
-   * Initialize router
-   */
   init() {
     // Remove trailing slashes
     const originalUri = window.location.href;
@@ -85,23 +76,27 @@ class Router {
   }
 }
 
-// window.addEventListener("popstate", event => {
-//   // Grab the history state id
-//   let stateId = event.state.id;
-//   // Show clicked id in console (just for fun)
-//   console.log("stateId = ", stateId);
-//   // Visually select the clicked button/tab/box
-//   select_tab(stateId);
-//   // Load content for this tab/page
-//   load_content(stateId);
-// });
+const displayAvatar = async () => {
+  const urlForMakingApiCallToGetUserInfo = composeUrlForMakingApiCallToGetUserInfo();
+
+  try {
+    const userInfoBody = await makeApiCallToGetUserInfo(
+      urlForMakingApiCallToGetUserInfo
+    );
+    const avatarUrl = userInfoBody.avatar_url;
+    document.getElementById('avatar').setAttribute('src', avatarUrl);
+    document.querySelectorAll('.login-button').forEach((e) => {
+      e.classList.add('hidden');
+    });
+  } catch (err) {
+    console.error(err);
+  }
+};
 
 document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('navbar-anchor').appendChild(navbar);
   document.getElementById('footer-anchor').appendChild(footer);
-
   const contentAnchor = document.getElementById('content-anchor');
-
   const router = new Router();
 
   router.get('/', (req) => {
@@ -119,14 +114,14 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('content-anchor').appendChild(labelcopierContent);
 
     const urlParams = new URLSearchParams(window.location.search);
-
     window.accessToken = null;
 
     if (urlParams.has('token')) {
       window.accessToken = urlParams.get('token');
       window.history.replaceState({}, document.title, '/' + 'labelcopier');
+      const accessTokenIsNull = window.accessToken === 'null';
 
-      if (window.accessToken === 'null') {
+      if (accessTokenIsNull) {
         const msg =
           'Something went wrong with authentication. Please try to login again.';
         console.error(msg);
@@ -138,28 +133,18 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       // Check if the corresponding app is installed
-      const appInstalled = await apiCallCheckAppInstalled(
-        urlForCheckAppInstalled
+      const urlToCheckIfGithubAppIsInstalled = composeUrlForCheckingIfGithubAppIsInstalled();
+      const appIsInstalled = await apiCallCheckAppInstalled(
+        urlToCheckIfGithubAppIsInstalled
       );
 
-      if (!appInstalled) {
+      if (!appIsInstalled) {
         window.location =
-          window.location.hostname === 'badwaterbay.com'
-            ? 'https://api.badwaterbay.com/apps/labelcopier/install/new'
-            : 'http://localhost:5036/apps/labelcopier/install/new';
+          'https://api.badwaterbay.com/apps/labelcopier/install/new';
         return;
       }
 
-      // Display avatar
-      apiCallGetUser(urlForGetUser)
-        .then((body) => body.avatar_url)
-        .then((avatarUrl) => {
-          document.getElementById('avatar').setAttribute('src', avatarUrl);
-          document.querySelectorAll('.login-button').forEach((e) => {
-            e.classList.add('hidden');
-          });
-        });
-      // There should be a catch here.
+      await displayAvatar();
     }
 
     labelcopierApp();
