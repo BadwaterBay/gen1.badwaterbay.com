@@ -19,10 +19,8 @@ import labelcopierContent from './apps/labelcopier/src/index';
 import labelcopierApp from './apps/labelcopier/src/app';
 
 import {
-  composeUrlForMakingApiCallToGetUserInfo,
   makeApiCallToGetUserInfo,
-  composeUrlForCheckingIfGithubAppIsInstalled,
-  apiCallCheckAppInstalled,
+  makeApiCallToCheckIfGithubAppIsInstalled,
 } from './apps/labelcopier/src/js/apiCalls';
 
 library.add(faGithub, faTwitter, faEnvelope);
@@ -77,12 +75,8 @@ class Router {
 }
 
 const displayAvatar = async () => {
-  const urlForMakingApiCallToGetUserInfo = composeUrlForMakingApiCallToGetUserInfo();
-
   try {
-    const userInfoBody = await makeApiCallToGetUserInfo(
-      urlForMakingApiCallToGetUserInfo
-    );
+    const userInfoBody = await makeApiCallToGetUserInfo();
     const avatarUrl = userInfoBody.avatar_url;
     document.getElementById('avatar').setAttribute('src', avatarUrl);
     document.querySelectorAll('.login-button').forEach((e) => {
@@ -133,10 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       // Check if the corresponding app is installed
-      const urlToCheckIfGithubAppIsInstalled = composeUrlForCheckingIfGithubAppIsInstalled();
-      const appIsInstalled = await apiCallCheckAppInstalled(
-        urlToCheckIfGithubAppIsInstalled
-      );
+      const appIsInstalled = await makeApiCallToCheckIfGithubAppIsInstalled();
 
       if (!appIsInstalled) {
         window.location =
